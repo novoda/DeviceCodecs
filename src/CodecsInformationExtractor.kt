@@ -60,13 +60,13 @@ object CodecsInformationExtractor {
             }
         }
 
-        if (profilesLevels.isNotEmpty()) {
-            return DeviceProfilesLevels(
+        return if (profilesLevels.isNotEmpty()) {
+            DeviceProfilesLevels(
                 Device(deviceCodename.toString(), deviceModel.toString()),
                 profilesLevels.toList()
             )
         } else {
-            return null
+            null
         }
     }
 
