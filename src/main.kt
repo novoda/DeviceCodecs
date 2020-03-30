@@ -12,11 +12,11 @@ import java.util.concurrent.TimeUnit
 fun main(args: Array<String>) {
     val now = System.currentTimeMillis()
 
-    val inputFfilename = args[0]
+    val inputFilename = args[0]
     val outputFilename = args[1]
 
     val codecsFilter = CodecsFilter.from(args.getOrNull(2) ?: "ALL")
-    val codecsInformationResult = CodecsInformationExtractor.extractFrom(inputFfilename, codecsFilter)
+    val codecsInformationResult = CodecsInformationExtractor.extractFrom(inputFilename, codecsFilter)
     val codecsSupportCoverage = CodecsPercentageSupportGenerator.generateFrom(codecsInformationResult)
     CvsOutputGenerator.generateFrom(outputFilename, codecsSupportCoverage)
 
