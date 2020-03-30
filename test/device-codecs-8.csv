@@ -1,0 +1,5 @@
+"devicecodename","deviceModel","errorMessage","_count"
+"gtaxlwifi","SM-T580","[canonicalName - null] [isAlias - null] [isHardwareAccelerated - null] [isSoftwareOnly - null] [isVendor - null] [name - OMX.google.vp9.decoder] [ [ profile:VP9Profile0 - level:VP9Level2 ] ]","39502"
+"gtaxlwifi","SM-T580","[canonicalName - null] [isAlias - null] [isHardwareAccelerated - null] [isSoftwareOnly - null] [isVendor - null] [name - OMX.google.vp9.decoder] [ [ profile:AVCProfileMain - level:AVCLevel11 ] ]","39502"
+"gtaxlwifi","SM-T580","[canonicalName - null] [isAlias - null] [isHardwareAccelerated - null] [isSoftwareOnly - null] [isVendor - null] [name - OMX.google.vp9.decoder] [ [ profile:HEVCProfileMain10 - level:HEVCMainTierLevel21 ] ]","39502"
+"gtaxlwifi","SM-T580","[canonicalName - null] [isAlias - null] [isHardwareAccelerated - null] [isSoftwareOnly - null] [isVendor - null] [name - OMX.google.vp9.decoder] [ [ profile:HEVCProfileHigh10 - level:HEVCHighTierLevel21 ] ]","39502"
