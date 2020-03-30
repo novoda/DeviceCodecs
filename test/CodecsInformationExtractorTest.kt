@@ -24,6 +24,51 @@ class CodecsInformationExtractorTest {
     }
 
     @Test
+    fun `when profile is UNKNOWN then is not added to the list`() {
+        val codecsInformationResult = CodecsInformationExtractor.extractFrom("device-codecs-9.csv", CodecsFilter.ALL)
+
+        val expectedCodecsInformationResult = CodecsInformationResult(
+            codecs = HashMap(),
+            devices = emptySet()
+        )
+
+        assertEquals(
+            expected = expectedCodecsInformationResult,
+            actual = codecsInformationResult
+        )
+    }
+
+    @Test
+    fun `when level is UNKNOWN then is not added to the list`() {
+        val codecsInformationResult = CodecsInformationExtractor.extractFrom("device-codecs-11.csv", CodecsFilter.ALL)
+
+        val expectedCodecsInformationResult = CodecsInformationResult(
+            codecs = HashMap(),
+            devices = emptySet()
+        )
+
+        assertEquals(
+            expected = expectedCodecsInformationResult,
+            actual = codecsInformationResult
+        )
+    }
+
+    @Test
+    fun `when profile is a number then is not added to the list`() {
+        val codecsInformationResult = CodecsInformationExtractor.extractFrom("device-codecs-10.csv", CodecsFilter.ALL)
+
+        val expectedCodecsInformationResult = CodecsInformationResult(
+            codecs = HashMap(),
+            devices = emptySet()
+        )
+
+        assertEquals(
+            expected = expectedCodecsInformationResult,
+            actual = codecsInformationResult
+        )
+    }
+
+    @Test
     fun `two identical entries extracts one device for one profile and a base level`() {
         val codecsInformationResult = CodecsInformationExtractor.extractFrom("device-codecs-5.csv", CodecsFilter.ALL)
 

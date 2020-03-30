@@ -21,9 +21,11 @@ object CodecsInformationExtractor {
                 profileIndex = 0
                 levelIndex = 0
 
-                extractDeviceProfilesLevels(line).also { deviceProfilesLevels ->
-                    populateCodecs(deviceProfilesLevels, codecs, codecsFilter)
-                    devices.add(deviceProfilesLevels.device)
+                extractDeviceProfilesLevels(line).also {
+                    it?.let { deviceProfilesLevels ->
+                        populateCodecs(deviceProfilesLevels, codecs, codecsFilter)
+                        devices.add(deviceProfilesLevels.device)
+                    }
                 }
             } else {
                 firstLineSkipped = true
@@ -33,7 +35,7 @@ object CodecsInformationExtractor {
         return CodecsInformationResult(devices, codecs)
     }
 
-    private fun extractDeviceProfilesLevels(line: String): DeviceProfilesLevels {
+    private fun extractDeviceProfilesLevels(line: String): DeviceProfilesLevels? {
         val profilesLevels = mutableListOf<DeviceProfilesLevels.ProfileLevel>()
         val deviceCodename = StringBuilder()
         val deviceModel = StringBuilder()
@@ -58,10 +60,14 @@ object CodecsInformationExtractor {
             }
         }
 
-        return DeviceProfilesLevels(
-            Device(deviceCodename.toString(), deviceModel.toString()),
-            profilesLevels.toList()
-        )
+        if (profilesLevels.isNotEmpty()) {
+            return DeviceProfilesLevels(
+                Device(deviceCodename.toString(), deviceModel.toString()),
+                profilesLevels.toList()
+            )
+        } else {
+            return null
+        }
     }
 
     private fun searchDeviceCodename(character: Char) {
