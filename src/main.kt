@@ -1,15 +1,5 @@
 import java.util.concurrent.TimeUnit
 
-val input = listOf(
-    """
-    "dreamlte","SM-G950F","[canonicalName - null] [isAlias - null] [isHardwareAccelerated - null] [isSoftwareOnly - null] [isVendor - null] [name - OMX.Exynos.avc.dec] [ [ profile:AVCProfileBaseline - level:AVCLevel52 :: profile:AVCProfileConstrainedBaseline - level:AVCLevel52 :: profile:AVCProfileMain - level:AVCLevel52 :: profile:AVCProfileHigh - level:AVCLevel52 :: profile:AVCProfileConstrainedHigh - level:AVCLevel52 ] ]","38898"
-""".trimIndent(),
-    """
-    "another","device","[canonicalName - null] [isAlias - null] [isHardwareAccelerated - null] [isSoftwareOnly - null] [isVendor - null] [name - OMX.Exynos.avc.dec] [ [ profile:AVCProfileBaseline - level:AVCLevel52 :: profile:AVCProfileConstrainedBaseline - level:AVCLevel4 :: profile:AVCProfileMain - level:AVCLevel4 :: profile:AVCProfileHigh - level:AVCLevel4 :: profile:AVCProfileConstrainedHigh - level:AVCLevel4 ] ]","38898"
-""".trimIndent()
-)
-
-
 /**
  * Input parameters
  * [0] - CSV file
